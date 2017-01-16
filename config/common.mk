@@ -129,13 +129,11 @@ PRODUCT_PACKAGES += \
 
 # Custom XenonHD packages
 PRODUCT_PACKAGES += \
-    Adaway \
     Amaze \
     AudioFX \
     CMSettingsProvider \
     Eleven \
     ExactCalculator \
-    KernelAdiutor \
     LiveLockScreenService \
     LockClock \
     NovaLauncher \
@@ -144,11 +142,15 @@ PRODUCT_PACKAGES += \
     WallpaperPicker \
     WeatherProvider
 
-# Optional SuperSU apk
+# Optional apps for rooted devices
 ifeq ($(WITH_SUPERSU),true)
 PRODUCT_PACKAGES += \
+    su \
     SuperSU \
-    su
+    Adaway \
+    substratum \
+    masquerade \
+    KernelAdiutor
 endif
 
 # Extra tools in XenonHD
@@ -238,10 +240,14 @@ PRODUCT_PACKAGES += \
     procmem \
     procrank
 
-# Conditionally build in su
+# Conditionally build in su and root apps
 ifeq ($(WITH_SU),true)
 PRODUCT_PACKAGES += \
-    su
+    su \
+    Adaway \
+    substratum \
+    masquerade \
+    KernelAdiutor
 endif
 endif
 
